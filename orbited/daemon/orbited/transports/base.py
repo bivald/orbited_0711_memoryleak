@@ -2,6 +2,7 @@ import logging
 
 from twisted.web import server, resource
 from twisted.internet import defer, reactor
+from twisted.internet.error import AlreadyCancelled, AlreadyCalled
 
 logger = logging.getLogger('orbited.transports.base.CometTransport')
 
@@ -18,7 +19,7 @@ class CometTransport(resource.Resource):
         self.packets = []
         self.request = request
         self.opened()
-        self.request.notifyFinish().addBoth(self.finished)
+        #self.conn.notifiyFinish().addCallback(self.finished)
         self.resetHeartbeat()
         self.closeDeferred = defer.Deferred()
         self.conn.transportOpened(self)
@@ -28,8 +29,12 @@ class CometTransport(resource.Resource):
         self.heartbeatTimer = reactor.callLater(self.HEARTBEAT_INTERVAL, self.doHeartbeat)
 
     def doHeartbeat(self):
+        if self.conn.closed: # If our parent is closed, we don't care about heartbeats?
+            self.close()
+            return
+
         if self.closed:
-            logger.debug("don't send hearbeat -- we should be closed")
+            logger.debug("don't send hearbeat -- we should be closed", )
             raise Exception("show tb...")
         else:
             self.writeHeartbeat()
@@ -51,12 +56,8 @@ class CometTransport(resource.Resource):
             self.heartbeatTimer.cancel()
             self.resetHeartbeat()
 
+    # i don't think this is ever called...
     def finished(self, arg):
-        """ Callback and Errback for self.request.notifyFinish.
-            
-            Commonly called because the connection is lost before the response
-            is sent. 
-        """
         logger.debug('finished: %s'%(arg,))
         self.request = None
         self.close()
@@ -66,20 +67,33 @@ class CometTransport(resource.Resource):
         return self.closeDeferred
 
     def close(self):
+
         if self.closed:
             logger.debug('close called - already closed')
             return
         self.closed = True
-        logger.debug('close %r', repr(self))
-        self.heartbeatTimer.cancel()
-        self.heartbeatTimer = None
+        logger.debug('close ', repr(self))
+        
+        try:
+            self.heartbeatTimer.cancel()
+            self.heartbeatTimer = None
+        except AlreadyCalled:
+            pass
+
+        try:
+            self.closeDeferred.callback(self)
+            self.closeDeferred = None
+        except AlreadyCalled:
+            pass
+
         self.open = False
         if self.request:
             logger.debug('calling finish')
             self.request.finish()
         self.request = None
-        self.closeDeferred.callback(self)
-        self.closeDeferred = None
+        
+        self.conn = None
+        self.packets = []
 
     # Override these
     def write(self, packets):

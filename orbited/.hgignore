@@ -5,6 +5,5 @@
 ^include/
 ^lib/
 ^lib64
-daemon/build
-daemon/dist
-daemon/orbited.egg-info
+daemon/.+egg
+daemon/orbited.egg-info/

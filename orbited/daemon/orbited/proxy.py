@@ -41,7 +41,7 @@ class ProxyIncomingProtocol(Protocol):
         # NB: its cometsession.py:TCPConnectionResource that makes sure
         #     we receive whole frames here.
         self.logger.debug('dataReceived: data=%r' % data)
-        self.logger.debug('self.outgoingConn is %r', self.outgoingConn)
+        self.logger.debug('self.outgoingConn is', self.outgoingConn)
 
         if self.outgoingConn:
             # NB: outgoingConn is-a ProxyOutgoingProtocol
@@ -54,7 +54,7 @@ class ProxyIncomingProtocol(Protocol):
                 port = int(port)
                 self.completedHandshake = True
             except:
-                self.logger.error("failed to connect on handshake")
+                self.logger.error("failed to connect on handshake", tb=True)
                 self.transport.write("0" + str(ERRORS['InvalidHandshake']))
                 self.transport.loseConnection()
                 return
@@ -87,6 +87,12 @@ class ProxyIncomingProtocol(Protocol):
         self.logger.warn("Connection Error %s" % (err,))
         self.transport.write("0" + str(ERRORS['RemoteConnectionFailed']))
         self.transport.loseConnection()
+        
+        if self.outgoingConn is not None:
+            self.outgoingConn = None
+        
+        if self.transport is not None:
+            self.transport = None
                 
     def connectionLost(self, reason):
         self.logger.debug("connectionLost %s" % reason)
@@ -94,6 +100,13 @@ class ProxyIncomingProtocol(Protocol):
             self.outgoingConn.transport.loseConnection()
         if self.completedHandshake:
             self.logger.info('connection closed from %s:%s to %s:%s'%(self.fromHost, self.fromPort, self.toHost, self.toPort))
+        
+        if self.outgoingConn is not None:
+            self.outgoingConn = None
+        
+        if self.transport is not None:
+            self.transport = None
+        
 
     def outgoingConnectionEstablished(self, outgoingConn):
         if self.state == 'closed':
@@ -104,7 +117,10 @@ class ProxyIncomingProtocol(Protocol):
         
     def outgoingConnectionLost(self, outgoingConn, reason):
         self.logger.debug("remoteConnectionLost %s" % reason)
-        self.transport.loseConnection()
+        if self.transport is not None: 
+            self.transport.loseConnection()
+        if self.outgoingConn is not None:
+            self.outgoingConn = None
 
     def write(self, data):
 #        data = base64.b64encode(data)
@@ -133,6 +149,8 @@ class ProxyOutgoingProtocol(Protocol):
     def connectionLost(self, reason):
         self.incomingConn.outgoingConnectionLost(self, reason)
         config.map['globalVars']['connections'] -= 1
+        self.incomingConn = None
+        
 
 class ProxyFactory(Factory):
 

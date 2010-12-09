@@ -36,7 +36,8 @@ try:
             ]) },
         zip_safe = False,
         install_requires = ['morbid >= 0.8.7.3',
-                            'twisted==10.1'],
+                            'coverage == 3.3.1',
+                            'twisted'],
         entry_points = '''
             [console_scripts]
             orbited = orbited.start:main

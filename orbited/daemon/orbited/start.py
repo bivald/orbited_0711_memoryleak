@@ -4,9 +4,12 @@ import logging.config
 import os
 import sys
 import urlparse
-
+import gc
+    
 from orbited import __version__ as version
 from orbited import config
+
+logger = logging.getLogger(__name__)
 
 def _import(name):
     module_import = name.rsplit('.', 1)[0]
@@ -110,8 +113,6 @@ def main():
         config.setup(options=options)
 
     logging.config.fileConfig(options.config)
-    global logger
-    logger = logging.getLogger(__name__)
     
     # NB: we need to install the reactor before using twisted.
     reactor_name = config.map['[global]'].get('reactor')
@@ -142,6 +143,13 @@ def main():
     
     if config.map['[test]']['stompdispatcher.enabled'] == '1':
         logger.info('stompdispatcher enabled')
+
+
+
+    #gc.enable()
+    #gc.set_debug(gc.DEBUG_LEAK)
+    
+    #reactor.callLater(1, cleanup, reactor)
     
     #static_files.putChild('orbited.swf', static.File(os.path.join(os.path.dirname(__file__), 'flash', 'orbited.swf')))
     site = server.Site(root)
@@ -149,6 +157,9 @@ def main():
     _setup_protocols(root)
     _setup_static(root, config.map)
     start_listening(site, config.map, logger)
+    
+    #reactor.callWhenRunning( createShellServer(reactor) )
+    
 
     # switch uid and gid to configured user and group.
     if os.name == 'posix' and os.getuid() == 0:
@@ -179,6 +190,7 @@ def main():
 
     if options.profile:
         import hotshot
+        
         prof = hotshot.Profile("orbited.profile")
         logger.info("running Orbited in profile mode")
         logger.info("for information on profiler, see http://orbited.org/wiki/Profiler")
@@ -187,54 +199,53 @@ def main():
     else:
         reactor.run()
 
-class URLParseResult(object):
-    """ An object that allows access to urlparse results by index or name.
-        
-        This provides compatibility with python < 2.5 since the record fields
-        were added then.
-        
-        The tuple structure is like:
-        (scheme, netloc, path, params, query, fragment)
-    """
-    parts = ('scheme', 'netloc', 'path', 'params', 'query', 'fragment')
-    
-    @staticmethod
-    def _make_field_getter(self, index):
-        return lambda self: self[index]
-    
-    def __init__(self, result_tuple):
-        self._tuple = result_tuple
-        for index, part in enumerate(self.parts):
-            setattr(self.__class__, part, 
-                    property(self._make_field_getter(self, index)))
-        
-    
-    def __getitem__(self, index):
-        return self._tuple[index]
-    
-    def _split_netloc(self):
-        if ':' in self.netloc:
-            host, port = self.netloc.split(':')
-            port = int(port)
-        else:
-            host = self.netloc
-            port = 80
-        return host, port
-    
-    @property
-    def hostname(self):
-        return self._split_netloc()[0]
 
-    @property
-    def port(self):
-        return self._split_netloc()[1]
+def cleanup( reactor ):
+    print "cleaning"
+    print gc.collect()
+    reactor.callLater(5, cleanup, reactor)
 
-def _parse_url(url):
-    """ Parse `url' and return the result as a URLParseResult object.
-    """
-    result = urlparse.urlparse(url)
-    return URLParseResult(result)
-    
+def createShellServer( reactor ):
+	from twisted.manhole import telnet
+	print 'Creating shell server instance'
+	factory = telnet.ShellFactory()
+	port = reactor.listenTCP( 2000, factory)
+	factory.username = 'mike'
+	factory.password = 'testar'
+	print 'Listening on port 2000'
+	return port
+
+
+
+def dump_garbage():
+	# force collection
+	print "\nCollecting GARBAGE:"
+	gc.collect()
+	# prove they have been collected
+	print "\nCollecting GARBAGE:"
+	gc.collect()
+
+	print "\nGARBAGE OBJECTS:"
+	for x in gc.garbage:
+		s = str(x)
+		if len(s) > 80: s = "%s..." % s[:80]
+
+		print "::", s
+		print "		type:", type(x)
+		print "   referrers:", len(gc.get_referrers(x))
+		try:
+			print "	is class:", inspect.isclass(type(x))
+			print "	  module:", inspect.getmodule(x)
+
+			lines, line_num = inspect.getsourcelines(type(x))
+			print "	line num:", line_num
+			for l in lines:
+				print "		line:", l.rstrip("\n")
+		except:
+			pass
+
+		print
+
 def start_listening(site, config, logger):
     from twisted.internet import reactor
     from twisted.internet import protocol as protocol_module
@@ -245,15 +256,14 @@ def start_listening(site, config, logger):
     for protocol in test_servers:
         urlparse.uses_netloc.append(protocol)
 
+    createShellServer( reactor )
+
     for addr in config['[listen]']:
-        logger.debug(addr)
         if addr.startswith("stomp"):
             stompConfig = ""
             if " " in addr:
                 addr, stompConfig = addr.split(" ",1)
-        url = _parse_url(addr)
-        logger.debug('hostname: %r', url.hostname)
-        logger.debug('port: %r', url.port)
+        url = urlparse.urlparse(addr)
         hostname = url.hostname or ''
         if url.scheme == 'stomp':
             logger.info('Listening stomp@%s' % url.port)

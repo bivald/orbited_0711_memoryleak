@@ -67,7 +67,7 @@ class Port(object):
         else:
             raise CannotListenError("Already listening...")
 
-    def stopListening(self):
+    def stopListening():
         self.logger.debug('stopListening')
         if self.wrapped_port:
             self.listening = False
@@ -94,7 +94,7 @@ class Port(object):
         transportProtocol.parentTransport = transport
         protocol.makeConnection(transport)
         
-    def getHost(self):
+    def getHost():
         if self.wrapped_port:
             return self.wrapped_port.getHost()
         elif self.resource:
@@ -136,6 +136,8 @@ class FakeTCPTransport(object):
         
     def connectionLost(self):
         self.protocol.connectionLost(None)
+        self.transportProtocol = None
+        self.protocol = None
             
     hostHeader = property(lambda s: s.transportProtocol.hostHeader)
     
@@ -208,11 +210,13 @@ class TCPConnectionResource(resource.Resource):
         return None
 
     def connectionLost(self):
-        self.logger.debug('connectionLost... already triggered? %r', self.lostTriggered)
+        self.logger.debug('connectionLost... already triggered?', self.lostTriggered)
         if not self.lostTriggered:
             self.logger.debug('do trigger');
             self.lostTriggered = True
             self.parentTransport.connectionLost()
+            
+
 
     def getChild(self, path, request):
         if path in transports.map:
@@ -297,6 +301,10 @@ class TCPConnectionResource(resource.Resource):
         if transport is self.cometTransport:
             self.cometTransport= None
 
+    def connectionAborted(self, x): 
+        self.cometTransport = None 
+        self.close(reason="Connection lost. Browser quit?", now=True) 
+
     # Called by transports.CometTransport.render
     def transportOpened(self, transport):
         self.resetPingTimer()
@@ -307,6 +315,8 @@ class TCPConnectionResource(resource.Resource):
         self.cometTransport = transport
         transport.CONNECTION = self
         transport.onClose().addCallback(self.transportClosed)
+        self.cometTransport.request.notifyFinish().addErrback(self.connectionAborted)
+        
         ack = transport.request.args.get('ack', [None])[0]
         if ack:
             try:
@@ -343,6 +353,7 @@ class TCPConnectionResource(resource.Resource):
             self.pingTimer = None
 
     def hardClose(self):
+        
         self.closed = True
         self.cancelTimers()
         if self.closeTimer:
@@ -353,6 +364,11 @@ class TCPConnectionResource(resource.Resource):
             self.cometTransport = None
         self.connectionLost()
         self.root.removeConn(self)
+        
+        
+        
+
+        
 
     def close(self, reason="", now=False):
         if self.closed:
@@ -442,7 +458,7 @@ class TCPResource(resource.Resource):
         hostHeader = request.received_headers.get('host', '')
         self.connections[key] = TCPConnectionResource(self, key, request.client, request.host, hostHeader)
         self.listeningPort.connectionMade(self.connections[key])
-        self.logger.debug('created conn: %s', repr(self.connections[key]))
+        self.logger.debug('created conn: ', repr(self.connections[key]))
         request.setHeader('cache-control', 'no-cache, must-revalidate')
         return key
 
@@ -462,8 +478,7 @@ class TCPResource(resource.Resource):
 
     def connectionMade(self, conn):
         self.listeningPort.connectionMade(conn)
-        
-        
+
 if __name__ == "__main__":
     class EchoProtocol(Protocol):
         
