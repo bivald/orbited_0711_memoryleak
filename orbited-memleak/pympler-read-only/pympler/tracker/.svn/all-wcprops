@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/285/trunk/pympler/tracker
+END
+classes.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/279/trunk/pympler/tracker/classes.py
+END
+stats.py
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/285/trunk/pympler/tracker/stats.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/201/trunk/pympler/tracker/__init__.py
+END

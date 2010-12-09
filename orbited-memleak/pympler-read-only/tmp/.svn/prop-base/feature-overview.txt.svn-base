@@ -1,0 +1,9 @@
+K 13
+svn:eol-style
+V 6
+native
+K 12
+svn:keywords
+V 88
+Author Date Id Revision *.png = svn:mime-type=image/png *.jpg = svn:mime-type=image/jpeg
+END

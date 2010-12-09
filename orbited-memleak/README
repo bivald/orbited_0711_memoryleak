@@ -1,0 +1,25 @@
+What is this thing?
+
+clshim: the backend socket server, it sends one short message per second to all clients
+cometsim: a hacked up emulation of the http requests a browser would make, originally created for load testing, it connects all clients initially and they stay connected indefinitely
+watchmem.sh: a handy script for logging orbited memory usage
+orbited-log: a log with 100 clients left overnight, memory usage grew from 20M to 117M
+orbited.cfg: the config file I used
+README: this file
+
+Ok, how do I use it?
+
+You will need the development packages for curl and pthreads installed, as well as a C++ compiler. Tested only on Linux with GCC and Orbited 0.7.10.
+
+First, compile:
+make
+
+Now, run the following each in its own terminal (for readability):
+./clshim
+orbited -c ./orbited.cfg
+./cometsim 100 #that's 100 clients
+./watchmem.sh
+
+Further notes
+
+Orbited appears to leak memory regardless of how many clients you connect, but the memory leaks accelerate with increasing numbers of clients. I have verified this up to about 5000 clients.

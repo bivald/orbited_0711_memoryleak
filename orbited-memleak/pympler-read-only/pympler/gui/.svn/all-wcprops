@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/286/trunk/pympler/gui
+END
+garbage.py
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/279/trunk/pympler/gui/garbage.py
+END
+web.py
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/286/trunk/pympler/gui/web.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/198/trunk/pympler/gui/__init__.py
+END
+graph.py
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/281/trunk/pympler/gui/graph.py
+END
+charts.py
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/279/trunk/pympler/gui/charts.py
+END

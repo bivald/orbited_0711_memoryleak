@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/!svn/ver/282/trunk/test/gui
+END
+test_web.py
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/282/trunk/test/gui/test_web.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/198/trunk/test/gui/__init__.py
+END
+test_garbage.py
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/234/trunk/test/gui/test_garbage.py
+END

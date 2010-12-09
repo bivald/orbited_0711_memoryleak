@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/286/trunk/templates
+END
+stacktrace.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/286/trunk/templates/stacktrace.tpl
+END
+index.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/266/trunk/templates/index.tpl
+END
+header.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/284/trunk/templates/header.tpl
+END
+garbage.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/268/trunk/templates/garbage.tpl
+END
+style.css
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/286/trunk/templates/style.css
+END
+tracker.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/278/trunk/templates/tracker.tpl
+END
+process.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/286/trunk/templates/process.tpl
+END
+footer.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/266/trunk/templates/footer.tpl
+END
+garbage_index.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/273/trunk/templates/garbage_index.tpl
+END
+tracker_class.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/278/trunk/templates/tracker_class.tpl
+END

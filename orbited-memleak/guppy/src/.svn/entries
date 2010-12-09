@@ -1,0 +1,37 @@
+9
+
+dir
+88
+http://guppy-pe.svn.sourceforge.net/svnroot/guppy-pe/trunk/guppy/src
+http://guppy-pe.svn.sourceforge.net/svnroot/guppy-pe
+
+
+
+2010-09-10T10:27:09.979401Z
+88
+svenil
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+a2a17790-8729-0410-921b-93eeb8b3d4a2
+
+include
+dir
+
+heapy
+dir
+
+sets
+dir
+

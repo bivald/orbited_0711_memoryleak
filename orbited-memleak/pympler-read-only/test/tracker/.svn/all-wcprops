@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/285/trunk/test/tracker
+END
+test_stats.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/285/trunk/test/tracker/test_stats.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/198/trunk/test/tracker/__init__.py
+END
+test_classtracker.py
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/234/trunk/test/tracker/test_classtracker.py
+END

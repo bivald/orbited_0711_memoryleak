@@ -1,0 +1,10 @@
+include LICENSE
+include NOTICE
+include README
+
+include templates/*.tpl
+include templates/*.css
+
+recursive-include doc *
+prune doc/source
+prune doc/build

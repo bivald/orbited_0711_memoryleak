@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/svn/!svn/ver/286/trunk/pympler
+END
+process.py
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/280/trunk/pympler/process.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/283/trunk/pympler/__init__.py
+END
+metadata.py
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/275/trunk/pympler/metadata.py
+END

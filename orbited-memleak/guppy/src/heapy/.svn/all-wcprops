@@ -1,0 +1,185 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svnroot/guppy-pe/!svn/ver/58/trunk/guppy/src/heapy
+END
+hpinit.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/guppy-pe/!svn/ver/1/trunk/guppy/src/heapy/hpinit.h
+END
+hv_cli_findex.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/guppy-pe/!svn/ver/1/trunk/guppy/src/heapy/hv_cli_findex.c
+END
+heapdef.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/guppy-pe/!svn/ver/1/trunk/guppy/src/heapy/heapdef.h
+END
+hv_cli_indisize.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/guppy-pe/!svn/ver/1/trunk/guppy/src/heapy/hv_cli_indisize.c
+END
+hv_cli_user.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/guppy-pe/!svn/ver/1/trunk/guppy/src/heapy/hv_cli_user.c
+END
+interpreter.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/guppy-pe/!svn/ver/1/trunk/guppy/src/heapy/interpreter.c
+END
+hv_cli.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/guppy-pe/!svn/ver/1/trunk/guppy/src/heapy/hv_cli.c
+END
+hv_cli_rel.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/guppy-pe/!svn/ver/50/trunk/guppy/src/heapy/hv_cli_rel.c
+END
+nodegraph.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/guppy-pe/!svn/ver/50/trunk/guppy/src/heapy/nodegraph.c
+END
+heapyc.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/guppy-pe/!svn/ver/51/trunk/guppy/src/heapy/heapyc.c
+END
+heapy.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/guppy-pe/!svn/ver/58/trunk/guppy/src/heapy/heapy.h
+END
+hv_cli_rcs.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/guppy-pe/!svn/ver/1/trunk/guppy/src/heapy/hv_cli_rcs.c
+END
+nodegraph.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/guppy-pe/!svn/ver/1/trunk/guppy/src/heapy/nodegraph.h
+END
+hv.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svnroot/guppy-pe/!svn/ver/50/trunk/guppy/src/heapy/hv.c
+END
+stdtypes.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/guppy-pe/!svn/ver/50/trunk/guppy/src/heapy/stdtypes.c
+END
+hv_cli_id.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/guppy-pe/!svn/ver/1/trunk/guppy/src/heapy/hv_cli_id.c
+END
+relation.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/guppy-pe/!svn/ver/1/trunk/guppy/src/heapy/relation.h
+END
+hv_cli_clodo.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/guppy-pe/!svn/ver/1/trunk/guppy/src/heapy/hv_cli_clodo.c
+END
+classifier.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/guppy-pe/!svn/ver/50/trunk/guppy/src/heapy/classifier.c
+END
+impsets.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/guppy-pe/!svn/ver/1/trunk/guppy/src/heapy/impsets.c
+END
+rootstate.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/guppy-pe/!svn/ver/50/trunk/guppy/src/heapy/rootstate.c
+END
+stdtypes.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/guppy-pe/!svn/ver/1/trunk/guppy/src/heapy/stdtypes.h
+END
+xmemstats.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/guppy-pe/!svn/ver/1/trunk/guppy/src/heapy/xmemstats.c
+END
+hv_cli_and.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/guppy-pe/!svn/ver/50/trunk/guppy/src/heapy/hv_cli_and.c
+END
+roundupsize.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/guppy-pe/!svn/ver/1/trunk/guppy/src/heapy/roundupsize.c
+END
+horizon.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/guppy-pe/!svn/ver/50/trunk/guppy/src/heapy/horizon.c
+END
+classifier.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/guppy-pe/!svn/ver/1/trunk/guppy/src/heapy/classifier.h
+END
+hv_cli_idset.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/guppy-pe/!svn/ver/1/trunk/guppy/src/heapy/hv_cli_idset.c
+END
+hv_cli_dictof.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/guppy-pe/!svn/ver/1/trunk/guppy/src/heapy/hv_cli_dictof.c
+END
+initheapyc.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/guppy-pe/!svn/ver/1/trunk/guppy/src/heapy/initheapyc.c
+END

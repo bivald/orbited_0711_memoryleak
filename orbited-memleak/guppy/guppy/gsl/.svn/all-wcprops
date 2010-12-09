@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svnroot/guppy-pe/!svn/ver/65/trunk/guppy/guppy/gsl
+END
+Help.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/guppy-pe/!svn/ver/1/trunk/guppy/guppy/gsl/Help.py
+END
+XHTML.py
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/guppy-pe/!svn/ver/65/trunk/guppy/guppy/gsl/XHTML.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/guppy-pe/!svn/ver/1/trunk/guppy/guppy/gsl/__init__.py
+END
+Filer.py
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/guppy-pe/!svn/ver/40/trunk/guppy/guppy/gsl/Filer.py
+END
+Gsml.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/guppy-pe/!svn/ver/1/trunk/guppy/guppy/gsl/Gsml.py
+END
+DottedTree.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/guppy-pe/!svn/ver/40/trunk/guppy/guppy/gsl/DottedTree.py
+END
+Html.py
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/guppy-pe/!svn/ver/29/trunk/guppy/guppy/gsl/Html.py
+END
+Tester.py
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/guppy-pe/!svn/ver/65/trunk/guppy/guppy/gsl/Tester.py
+END
+FileIO.py
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/guppy-pe/!svn/ver/1/trunk/guppy/guppy/gsl/FileIO.py
+END
+Latex.py
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/guppy-pe/!svn/ver/1/trunk/guppy/guppy/gsl/Latex.py
+END
+Document.py
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/guppy-pe/!svn/ver/20/trunk/guppy/guppy/gsl/Document.py
+END
+Exceptions.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/guppy-pe/!svn/ver/1/trunk/guppy/guppy/gsl/Exceptions.py
+END
+SpecNodes.py
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/guppy-pe/!svn/ver/1/trunk/guppy/guppy/gsl/SpecNodes.py
+END
+Text.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/guppy-pe/!svn/ver/1/trunk/guppy/guppy/gsl/Text.py
+END
+Main.py
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/guppy-pe/!svn/ver/20/trunk/guppy/guppy/gsl/Main.py
+END

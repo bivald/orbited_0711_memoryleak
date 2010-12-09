@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/241/trunk/test/asizeof
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/92/trunk/test/asizeof/__init__.py
+END
+test_asizeof.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/241/trunk/test/asizeof/test_asizeof.py
+END

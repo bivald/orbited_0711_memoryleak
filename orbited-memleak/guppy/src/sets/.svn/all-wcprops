@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svnroot/guppy-pe/!svn/ver/88/trunk/guppy/src/sets
+END
+sets.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/guppy-pe/!svn/ver/50/trunk/guppy/src/sets/sets.c
+END
+bitset.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/guppy-pe/!svn/ver/83/trunk/guppy/src/sets/bitset.h
+END
+sets_internal.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/guppy-pe/!svn/ver/58/trunk/guppy/src/sets/sets_internal.h
+END
+nodeset.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/guppy-pe/!svn/ver/85/trunk/guppy/src/sets/nodeset.c
+END
+sets.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svnroot/guppy-pe/!svn/ver/1/trunk/guppy/src/sets/sets.h
+END
+immnodeset.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/guppy-pe/!svn/ver/50/trunk/guppy/src/sets/immnodeset.c
+END
+nodeset.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/guppy-pe/!svn/ver/1/trunk/guppy/src/sets/nodeset.h
+END
+bitset.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/guppy-pe/!svn/ver/88/trunk/guppy/src/sets/bitset.c
+END

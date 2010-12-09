@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/281/trunk/pympler/util
+END
+bottle2.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/281/trunk/pympler/util/bottle2.py
+END
+bottle3.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/274/trunk/pympler/util/bottle3.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/198/trunk/pympler/util/__init__.py
+END
+compat.py
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/270/trunk/pympler/util/compat.py
+END
+stringutils.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/266/trunk/pympler/util/stringutils.py
+END
